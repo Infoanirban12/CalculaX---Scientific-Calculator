@@ -25,9 +25,6 @@ CalculaX is a professional-grade, web-based scientific calculator tailored for c
 - Keyboard support and error handling
 - Light and dark color themes
 
-## Demo
-
-Try the live demo here: [CalculaX Scientific Calculator](https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/9f59171c5d5608c7302a5478e49bf347/ec01bd4f-ef24-4b27-8d34-5bccd322b2f3/index.html)
 
 ## Getting Started
 <img width="632" height="758" alt="image" src="https://github.com/user-attachments/assets/a2b8c53a-8fc2-4234-ab75-8a431068aeb2" />
