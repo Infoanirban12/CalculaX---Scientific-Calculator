@@ -29,10 +29,7 @@ CalculaX is a professional-grade, web-based scientific calculator tailored for c
 ## Getting Started
 <img width="632" height="758" alt="image" src="https://github.com/user-attachments/assets/a2b8c53a-8fc2-4234-ab75-8a431068aeb2" />
 
-### Prerequisites
 
-- Modern web browser (Chrome, Firefox, Edge, Safari)
-- No additional server setup required
 
 
 ## Contributing
