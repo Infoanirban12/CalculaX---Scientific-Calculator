@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalculaX - Scientific Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Fixed Banner -->
+    <div class="banner">
+        <div class="banner-content">
+            <div class="logo-container">
+                <svg class="calculator-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="4" y="4" width="16" height="16" rx="2" ry="2"/>
+                    <rect x="8" y="8" width="2" height="2"/>
+                    <rect x="14" y="8" width="2" height="2"/>
+                    <rect x="8" y="12" width="2" height="2"/>
+                    <rect x="14" y="12" width="2" height="2"/>
+                    <rect x="8" y="16" width="2" height="2"/>
+                    <rect x="14" y="16" width="2" height="2"/>
+                </svg>
+                <h1 class="brand-name">CalculaX</h1>
+            </div>
+            <div class="tagline">Advanced Scientific Competitive Exam Calculator</div>
+        </div>
+    </div>
+
+    <!-- Main Content Container -->
+    <div class="main-container">
+        <div class="calculator">
+            <!-- Display -->
+            <div class="display-container">
+                <div class="display">
+                    <div class="display-history" id="history"></div>
+                    <div class="display-current" id="display">0</div>
+                </div>
+                <div class="mode-indicator">
+                    <span class="mode-toggle" id="angleMode">DEG</span>
+                    <span class="memory-indicator" id="memoryIndicator"></span>
+                </div>
+            </div>
+
+            <!-- Row 1: [2nd] [MODE] [DEL] [AC] [HIST] [()] -->
+            <div class="button-row">
+                <button class="btn btn-special" id="secondBtn">2nd</button>
+                <button class="btn btn-special">MODE</button>
+                <button class="btn btn-special">DEL</button>
+                <button class="btn btn-special">AC</button>
+                <button class="btn btn-special">HIST</button>
+                <button class="btn btn-special">()</button>
+            </div>
+
+            <!-- Row 2: [sin] [cos] [tan] [ln] [log] [e^x] -->
+            <div class="button-row">
+                <button class="btn btn-function">sin</button>
+                <button class="btn btn-function">cos</button>
+                <button class="btn btn-function">tan</button>
+                <button class="btn btn-function">ln</button>
+                <button class="btn btn-function">log</button>
+                <button class="btn btn-function">e^x</button>
+            </div>
+
+            <!-- Row 3: [sin⁻¹] [cos⁻¹] [tan⁻¹] [√] [x²] [x^y] -->
+            <div class="button-row">
+                <button class="btn btn-function">sin⁻¹</button>
+                <button class="btn btn-function">cos⁻¹</button>
+                <button class="btn btn-function">tan⁻¹</button>
+                <button class="btn btn-function">√</button>
+                <button class="btn btn-function">x²</button>
+                <button class="btn btn-function">x^y</button>
+            </div>
+
+            <!-- Row 4: [π] [e] [x!] [1/x] [%] [±] -->
+            <div class="button-row">
+                <button class="btn btn-function">π</button>
+                <button class="btn btn-function">e</button>
+                <button class="btn btn-function">x!</button>
+                <button class="btn btn-function">1/x</button>
+                <button class="btn btn-function">%</button>
+                <button class="btn btn-function">±</button>
+            </div>
+
+            <!-- Row 5: [MC] [MR] [M+] [M-] [MS] [ANS] -->
+            <div class="button-row">
+                <button class="btn btn-memory">MC</button>
+                <button class="btn btn-memory">MR</button>
+                <button class="btn btn-memory">M+</button>
+                <button class="btn btn-memory">M-</button>
+                <button class="btn btn-memory">MS</button>
+                <button class="btn btn-memory">ANS</button>
+            </div>
+
+            <!-- Row 6: [7] [8] [9] [÷] [(] [)] -->
+            <div class="button-row">
+                <button class="btn btn-number">7</button>
+                <button class="btn btn-number">8</button>
+                <button class="btn btn-number">9</button>
+                <button class="btn btn-operator">÷</button>
+                <button class="btn btn-special">(</button>
+                <button class="btn btn-special">)</button>
+            </div>
+
+            <!-- Row 7: [4] [5] [6] [×] [-] [10^x] -->
+            <div class="button-row">
+                <button class="btn btn-number">4</button>
+                <button class="btn btn-number">5</button>
+                <button class="btn btn-number">6</button>
+                <button class="btn btn-operator">×</button>
+                <button class="btn btn-operator">-</button>
+                <button class="btn btn-function">10^x</button>
+            </div>
+
+            <!-- Row 8: [1] [2] [3] [+] [|x|] [√y] -->
+            <div class="button-row">
+                <button class="btn btn-number">1</button>
+                <button class="btn btn-number">2</button>
+                <button class="btn btn-number">3</button>
+                <button class="btn btn-operator">+</button>
+                <button class="btn btn-function">|x|</button>
+                <button class="btn btn-function">√y</button>
+            </div>
+
+            <!-- Row 9: [0] [.] [CE] [=] -->
+            <div class="button-row">
+                <button class="btn btn-number btn-wide">0</button>
+                <button class="btn btn-number">.</button>
+                <button class="btn btn-special">CE</button>
+                <button class="btn btn-equals btn-wide">=</button>
+            </div>
+        </div>
+
+        <!-- History Panel -->
+        <div class="history-panel" id="historyPanel">
+            <div class="history-header">
+                <h3>Calculation History</h3>
+                <button class="btn btn-special">×</button>
+            </div>
+            <div class="history-content" id="historyContent">
+                <p class="no-history">No calculations yet</p>
+            </div>
+            <button class="btn btn-special">Clear History</button>
+        </div>
+    </div>
+<div class="end">Made with ❤️</div>
+    <script src="app.js"></script>
+</body>
+</html>
